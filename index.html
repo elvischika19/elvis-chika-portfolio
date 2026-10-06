@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elvis Chika - Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080607;--text:#f9f1f1;--muted:#a08a8a;
+  --card:#141010;--border:#2a1e1e;
+  --rose:#E8AFAF;--rose2:#B76E79;--rose-glow:rgba(232,175,175,0.2);
+}
+*{box-sizing:border-box;margin:0}body{font-family:Inter,system-ui;background:var(--bg);color:var(--text);line-height:1.65}
+h1,h2{font-family:'Playfair Display',serif}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.nav{position:sticky;top:0;z-index:20;background:rgba(8,6,7,0.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;max-width:1100px;margin:0 auto}
+.logo{font-weight:800;letter-spacing:1px}.logo span{color:var(--rose)}
+.links{display:flex;gap:28px}.links a{color:var(--muted);text-decoration:none;font-size:13px;letter-spacing:0.5px}.links a:hover{color:var(--rose)}
+.btn{border:1px solid var(--border);background:var(--card);padding:10px 18px;border-radius:999px;font-size:13px;cursor:pointer;color:var(--text);transition:.2s}
+.btn:hover{border-color:var(--rose)}
+.btn-primary{background:linear-gradient(135deg,var(--rose),var(--rose2));color:#000;border:0;font-weight:700}
+.btn-primary:hover{box-shadow:0 0 20px var(--rose-glow);transform:translateY(-1px)}
+.hero{padding:90px 20px 70px;display:grid;gap:28px}
+.hero h1{font-size:clamp(38px,6.5vw,72px);line-height:0.9;letter-spacing:-2px}
+.hero h1 i{color:var(--rose);font-style:normal}
+.hero p{color:var(--muted);max-width:560px;font-size:17px}
+.tag{border:1px solid var(--border);color:var(--rose);letter-spacing:3px;font-size:10px;padding:6px 12px;border-radius:999px;display:inline-block}
+.grid{display:grid;gap:16px}
+@media(min-width:800px){.grid-2{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:1fr 1fr 1fr}.hero{grid-template-columns:1.3fr 0.7fr;align-items:end}}
+.card{border:1px solid var(--border);background:var(--card);border-radius:24px;padding:26px;transition:.3s}
+.card:hover{border-color:var(--rose2)}
+.muted{color:var(--muted);font-size:14px}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.skill{border:1px solid var(--border);padding:7px 14px;border-radius:999px;font-size:12px;background:#0e0a0a;color:var(--muted)}
+.skill.rose{border-color:var(--rose2);color:var(--rose)}
+section{padding:70px 0;border-top:1px solid var(--border)}
+input,textarea{width:100%;padding:13px 16px;border-radius:14px;border:1px solid var(--border);background:#0e0a0a;color:var(--text);margin-top:8px;outline:none}
+input:focus,textarea:focus{border-color:var(--rose)}
+.reveal{opacity:0;transform:translateY(18px);transition:.7s}
+.reveal.active{opacity:1;transform:translateY(0)}
+.mobile{display:none;position:fixed;inset:0;background:var(--bg);padding:90px 24px;z-index:15}
+.mobile a{display:block;padding:18px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text);font-size:22px;font-family:'Playfair Display'}
+.hamburger{display:none;background:none;border:0;color:var(--text);font-size:22px}
+@media(max-width:799px){.links,.desktop-only{display:none}.hamburger{display:block}}
+.project-img{height:180px;background:linear-gradient(135deg,#1a1212,#2a1a1a);border-radius:16px;display:grid;place-items:center;font-family:'Playfair Display';color:var(--rose);font-size:20px;border:1px solid var(--border);margin-bottom:16px}
+</style>
+</head>
+<body>
+<div class="nav">
+  <div class="nav-inner">
+    <div class="logo">ELVIS <span>CHIKA</span></div>
+    <div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+    <div style="display:flex;gap:8px"><button class="btn desktop-only" id="themeBtn">●</button><a href="#contact" class="btn btn-primary" style="text-decoration:none">Hire Me</a><button class="hamburger" id="ham">☰</button></div>
+  </div>
+</div>
+<div class="mobile" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">About</a><a href="#skills" onclick="toggleMenu()">Skills</a><a href="#projects" onclick="toggleMenu()">Projects</a><a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<div class="container">
+  <div class="hero">
+    <div>
+      <span class="tag">FRONTEND DEVELOPER • NIGERIA</span>
+      <h1 style="margin-top:18px">Hi, I'm <i>Elvis Chika.</i><br>I build elegant web stores.</h1>
+      <p class="reveal" style="margin-top:18px">I just completed HTML, CSS & JavaScript. I specialize in clean, responsive e-commerce and portfolio sites with a rose gold aesthetic. Currently building Sky Blue Stores.</p>
+      <div style="margin-top:28px;display:flex;gap:12px"><a href="#projects" class="btn btn-primary" style="text-decoration:none">View My Work</a><a href="#contact" class="btn" style="text-decoration:none">Contact Me</a></div>
+    </div>
+    <div class="card reveal"><div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--rose2));display:grid;place-items:center;color:#000;font-weight:800">EC</div><h3 style="margin-top:16px">Elvis Chika</h3><p class="muted">Based in Enugu • Open to internships</p><div class="skills"><span class="skill rose">HTML5</span><span class="skill rose">CSS3</span><span class="skill rose">JavaScript</span></div><p class="muted" style="margin-top:16px;font-size:12px">Theme: Rose Gold + Black — modern, luxurious, minimal.</p></div>
+  </div>
+
+  <section id="about"><h2 style="font-size:clamp(28px,4vw,42px)">About Me</h2><div class="grid grid-2" style="margin-top:22px"><p class="muted reveal">I'm Elvis Chika, a frontend developer passionate about building beautiful, functional websites. I enjoy turning ideas into real products — from voting platforms to national marketplaces. My focus now is e-commerce: fast, mobile-first stores that convert. I test everything on real phones (Tecno, Infinix) and pay attention to typography, spacing, and that premium rose gold finish.</p><div class="card reveal"><h3>My Approach</h3><p class="muted" style="margin-top:8px">1. Mobile-first design<br>2. Clean, consistent rose gold + black palette<br>3. Real interactivity with vanilla JS<br>4. Commit often with meaningful messages</p></div></div></section>
+
+  <section id="skills"><h2 style="font-size:clamp(28px,4vw,42px)">Skills</h2><div class="grid grid-3" style="margin-top:22px"><div class="card reveal"><h3>Frontend</h3><div class="skills"><span class="skill">HTML5 Semantic</span><span class="skill">CSS Flex/Grid</span><span class="skill">JavaScript ES6+</span><span class="skill">Responsive Design</span><span class="skill">Tailwind</span></div></div><div class="card reveal"><h3>E-commerce Focus</h3><div class="skills"><span class="skill">Product Cards</span><span class="skill">Cart Logic</span><span class="skill">Checkout UI</span><span class="skill">WhatsApp Order</span></div></div><div class="card reveal"><h3>Tools</h3><div class="skills"><span class="skill">Git & GitHub</span><span class="skill">Vercel / GitHub Pages</span><span class="skill">Figma</span><span class="skill">VS Code</span></div></div></div></section>
+
+  <section id="projects"><h2 style="font-size:clamp(28px,4vw,42px)">Projects</h2><div class="grid grid-2" style="margin-top:22px">
+    <div class="card reveal" style="border-color:var(--rose2)"><div class="project-img">SKY BLUE STORES</div><h3>Sky Blue Stores (Demo)</h3><p class="muted" style="margin-top:6px">A demo e-commerce fashion store — rose gold + black luxury theme. Features product grid, category filter, cart drawer, WhatsApp checkout, and free listing for vendors.</p><div class="skills"><span class="skill rose">E-commerce</span><span class="skill">JavaScript</span><span class="skill">Responsive</span></div><div style="margin-top:14px;display:flex;gap:8px"><a href="#" class="btn btn-primary">Live Demo</a><a href="#" class="btn">GitHub Code</a></div></div>
+    <div class="card reveal"><div class="project-img" style="color:#fff">VOTING</div><h3>Voting</h3><p class="muted" style="margin-top:6px">A projects built during training: A voting platform with 17 categories. Mobile-first and deployed on Vercel.</p><div class="skills"><span class="skill">Voting System</span></div><div style="margin-top:14px;display:flex;gap:8px"><a href="#" class="btn">Live Demo</a><a href="#" class="btn">GitHub</a></div></div>
+  </div></section>
+
+  <section id="contact"><h2 style="font-size:clamp(28px,4vw,42px)">Contact</h2><div class="grid grid-2" style="margin-top:22px"><form id="contactForm" class="card reveal"><label>Your Name<input id="name" required placeholder="Elvis Chika"></label><label style="display:block;margin-top:14px">Email<input id="email" type="email" required placeholder="elvis@example.com"></label><label style="display:block;margin-top:14px">Message<textarea id="msg" rows="4" required placeholder="Hi Elvis, I love your Sky Blue Stores demo..."></textarea></label><p id="formError" style="color:var(--rose);font-size:13px;margin-top:8px"></p><button class="btn btn-primary" style="margin-top:14px;width:100%">Send Message</button></form><div class="card reveal"><h3>Let's build something elegant</h3><p class="muted" style="margin-top:8px">Open to internships, freelance e-commerce stores, and collaborations.</p><p style="margin-top:20px;line-height:2">📧 chikaelvis08@gmail.com<br>📍 Enugu, Nigeria<br>💼 linkedin.com/in/elvischika19<br>🛍️ Project: Sky Blue Stores (Demo)</p><div style="margin-top:20px"><span class="tag">ROSE GOLD • BLACK • MINIMAL</span></div></div></div></section>
+
+  <p style="text-align:center;padding:50px 0;color:var(--muted);font-size:12px;letter-spacing:1px">© 2026 ELVIS CHIKA • Rose Gold & Black Edition • Built with HTML CSS JS</p>
+</div>
+
+<script>
+// Mobile menu
+const ham=document.getElementById('ham'),menu=document.getElementById('mobileMenu');
+function toggleMenu(){menu.style.display=menu.style.display==='block'?'none':'block'; ham.textContent=menu.style.display==='block'?'✕':'☰';}
+ham.onclick=toggleMenu;
+// Form validation
+document.getElementById('contactForm').onsubmit=(e)=>{
+  e.preventDefault();
+  const n=document.getElementById('name').value.trim(),em=document.getElementById('email').value.trim(),m=document.getElementById('msg').value.trim();
+  if(n.length<3)return document.getElementById('formError').innerText='Name must be at least 3 characters';
+  if(!em.includes('@'))return document.getElementById('formError').innerText='Enter a valid email';
+  if(m.length<10)return document.getElementById('formError').innerText='Message too short';
+  document.getElementById('formError').innerText=''; alert('Thanks '+n+'! Message received. I will reply soon.'); e.target.reset();
+};
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active')})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
